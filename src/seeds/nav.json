@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Выбор препарата",
+    "class": "link",
+    "link": "#hero"
+  },
+  {
+    "title": "Статьи",
+    "class": "link",
+    "link": "#articles"
+  },
+  {
+    "title": "Виды кашля",
+    "class": "link",
+    "link": "#cough"
+  }
+]

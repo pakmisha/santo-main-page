@@ -1,0 +1,18 @@
+.top-panel 
+    .nav-panel.content 
+        a(href="/index.html").logo: img(src="/img/logo.png", alt="") 
+        nav: ul 
+            each item in seed.nav
+                li: a(href=item.link class=item.class)= item.title  
+        div(class="hidden lg:flex items-center") 
+            div(class="flex items-center px-1 text-white py-1 rounded-full justify-center bg-black/30 bg-blur-md")
+                a(href="/" class="toggle-lang active mr-3") Ru 
+                a(href="/index-kz.html" class="toggle-lang") Kaz 
+            //- .lang-wrapper
+            //-     div Ru 
+            //-     div.switch
+            //-         input(type="checkbox" id="switch")
+            //-         label(for="switch")  
+            //-     div Kaz
+        div(class="block lg:hidden") 
+            button.hamburger

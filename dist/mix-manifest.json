@@ -1,0 +1,9 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/article-one.html": "/article-one.html",
+    "/index.html": "/index.html",
+    "/layouts/app.html": "/layouts/app.html",
+    "/parts/mobile-nav.html": "/parts/mobile-nav.html",
+    "/parts/nav.html": "/parts/nav.html"
+}

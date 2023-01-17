@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="yandex-verification" content="55dd93d9b3dd6002")
+        meta(name="google-site-verification" content="Zx-MMGlzpzi_lkEwdHxZMNfUGo4fnU4bD_3O17yTRrw")
+        link(rel='stylesheet'  type='text/css' href='./css/app.css')
+        <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
+        <!-- Google Tag Manager -->
+        script.
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-K67P4RS');
+        <!-- End Google Tag Manager -->
+        title kashlyanet
+    body
+        #app
+            include ../parts/nav
+            include ../parts/mobile-nav
+            block content
+            footer 
+                div(class="bg-brand-primary flex justify-center lg:justify-end py-3 content border-t items-center border-white")
+                    div(class="text-sm mr-3 text-white") Разработано:
+                    a(href="https://thdlworld.com/" class="logo-thdl"): img(src="./img/logo-thdl.png") 
+            script(src='./js/app.js')
+        <!-- Google Tag Manager (noscript) -->
+        noscript
+            iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-K67P4RS' height='0' width='0' style='display:none;visibility:hidden')
+        <!-- End Google Tag Manager (noscript) -->

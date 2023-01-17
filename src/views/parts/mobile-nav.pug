@@ -1,0 +1,7 @@
+nav.mobile-nav
+    ul 
+        each item in seed.nav
+            li: a(href=item.link class=item.class)= item.title 
+    div(class="absolute left-5 top-10 flex items-center px-1 text-white py-1 rounded-full justify-center bg-black/30 bg-blur-md")
+        a(href="/" class="toggle-lang active mr-3") Ru 
+        a(href="/index-kz.html" class="toggle-lang") Kaz 
