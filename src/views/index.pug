@@ -65,9 +65,11 @@ block content
                     div(class="text-brand-dark") Сухой кашель обычно возникает в начале воспаления в дыхательных путях и часто является симптомом респираторных заболеваний, вызванных вирусами или бактериями. При сухом кашле мокрота практически не образуется. Такой кашель изматывает, приводит к нарушению сна, утомляет, сопровождается болями в мышцах.
                     button.cough-sound#btn-play-dry 
                         .cough-sound__btn.dry 
-                            .btn-play.dry <i class="bi bi-play-fill"></i>
-                            .btn-pause.hidden.dry <i class="bi bi-pause"></i>
+                            .btn-play.dry <i class="bi bi-play-fill"></i> 
+                            .btn-pause.dry.hidden <i class="bi bi-pause"></i>
                         div(class="text-brand-dark text-sm w-[80%] text-left lg:text-base").text-dry Прислушайтесь как звучит сухой кашель
+                    audio(id="audio-1")
+                        source(src="/audio/dry.mp3")
                 .cough__content__item
                     div(class="flex items-center")
                         div: img(src="/img/cough-2.png" alt="")
@@ -76,6 +78,8 @@ block content
                     button.cough-sound#btn-play-wet 
                         .cough-sound__btn.dry 
                             .btn-play.wet <i class="bi bi-play-fill"></i>
-                            .btn-pause.hidden.wet <i class="bi bi-pause"></i>
+                            .btn-pause.wet.hidden <i class="bi bi-pause"></i>
                         div(class="text-brand-dark text-sm w-[80%] text-left lg:text-base").text-wet Прислушайтесь как звучит влажный кашель
+                    audio(id="audio-2")
+                        source(src="/audio/wet.mp3")
             div(class="text-center max-w-xl mx-auto text-white mt-5 lg:mt-10") Важно различать кашель, потому что сухой кашель лечится иначе, чем влажный кашель. Кроме того нельзя сочетать в лечении противокашлевые и отхаркивающие препараты.

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -117,11 +117,14 @@
               <div class="text-brand-dark">Сухой кашель обычно возникает в начале воспаления в дыхательных путях и часто является симптомом респираторных заболеваний, вызванных вирусами или бактериями. При сухом кашле мокрота практически не образуется. Такой кашель изматывает, приводит к нарушению сна, утомляет, сопровождается болями в мышцах.</div>
               <button class="cough-sound" id="btn-play-dry"> 
                 <div class="cough-sound__btn dry"> 
-                  <div class="btn-play dry"><i class="bi bi-play-fill"></i></div>
-                  <div class="btn-pause hidden dry"><i class="bi bi-pause"></i></div>
+                  <div class="btn-play dry"><i class="bi bi-play-fill"></i> </div>
+                  <div class="btn-pause dry hidden"><i class="bi bi-pause"></i></div>
                 </div>
                 <div class="text-brand-dark text-sm w-[80%] text-left lg:text-base text-dry">Прислушайтесь как звучит сухой кашель</div>
               </button>
+              <audio id="audio-1">
+                <source src="/audio/dry.mp3">
+              </audio>
             </div>
             <div class="cough__content__item">
               <div class="flex items-center">
@@ -132,10 +135,13 @@
               <button class="cough-sound" id="btn-play-wet"> 
                 <div class="cough-sound__btn dry"> 
                   <div class="btn-play wet"><i class="bi bi-play-fill"></i></div>
-                  <div class="btn-pause hidden wet"><i class="bi bi-pause"></i></div>
+                  <div class="btn-pause wet hidden"><i class="bi bi-pause"></i></div>
                 </div>
                 <div class="text-brand-dark text-sm w-[80%] text-left lg:text-base text-wet">Прислушайтесь как звучит влажный кашель</div>
               </button>
+              <audio id="audio-2">
+                <source src="/audio/wet.mp3">
+              </audio>
             </div>
           </div>
           <div class="text-center max-w-xl mx-auto text-white mt-5 lg:mt-10">Важно различать кашель, потому что сухой кашель лечится иначе, чем влажный кашель. Кроме того нельзя сочетать в лечении противокашлевые и отхаркивающие препараты.</div>

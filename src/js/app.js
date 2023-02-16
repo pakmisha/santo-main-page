@@ -15,9 +15,7 @@ const APP = {
         document.querySelector("html").classList.remove("no-scroll");
         document.querySelector(".mobile-nav").classList.remove("active");
         document.querySelector(".hamburger").classList.remove("is-active");
-        Array.from(document.querySelectorAll(".link.active")).forEach(function (
-          link
-        ) {
+        Array.from(document.querySelectorAll(".link.active")).forEach(function (link) {
           link.classList.remove("active");
         });
         item.classList.add("active");
@@ -72,18 +70,14 @@ const APP = {
       [...$item.querySelectorAll(".tab-toggle")].forEach(($toggle) => {
         $toggle.addEventListener("click", (event) => {
           event.preventDefault();
-          [...document.querySelectorAll(".tab-toggle.active")].forEach(
-            ($toggleActive) => {
-              $toggleActive.classList.remove("active");
-            }
-          );
+          [...document.querySelectorAll(".tab-toggle.active")].forEach(($toggleActive) => {
+            $toggleActive.classList.remove("active");
+          });
           const $activeToggle = $item.querySelector(".tab-toggle.active");
           if ($activeToggle) {
             $activeToggle.classList.remove("active");
           }
-          const $activeTab = document.querySelectorAll(
-            ".tabs__wrapper__item.active-tab"
-          );
+          const $activeTab = document.querySelectorAll(".tabs__wrapper__item.active-tab");
           [...$activeTab].forEach((item) => {
             if (item) {
               item.classList.remove("active-tab");
@@ -91,9 +85,7 @@ const APP = {
             }
           });
 
-          const currentTab = document.querySelector(
-            $toggle.getAttribute("href")
-          );
+          const currentTab = document.querySelector($toggle.getAttribute("href"));
           currentTab.classList.add("active-tab");
           currentTab.classList.remove("hidden-tab");
           $toggle.classList.add("active");
@@ -118,61 +110,82 @@ const APP = {
     });
   },
   initAudio() {
-    if (document.querySelector(".index")) {
-      const el = document.getElementById("btn-play-dry");
-      const playing = false; // текущее состояние плеера
-
-      const player = new Audio("/audio/dry.mp3");
-      player.preload = "auto";
-      player.addEventListener("ended", function () {
-        // слушаем окончание трека
-        // document.querySelector(".text-dry").innerText =
-        //   "Прислушайтесь как звучит сухой кашель";
-        document.querySelector(".btn-play.dry").classList.remove("hidden");
-        document.querySelector(".btn-pause.dry").classList.add("hidden");
-        playing = false;
-      });
-      el.addEventListener("click", playPause); // слушаем нажатие на кнопку
-      function playPause() {
-        if (playing) {
-          player.pause();
-          document.querySelector(".text-dry").innerText = "Paused";
-        } else {
-          player.play();
-          document.querySelector(".btn-play.dry").classList.add("hidden");
-          document.querySelector(".btn-pause.dry").classList.remove("hidden");
-          // document.querySelector(".text-dry").innerText = "Playing..";
-          // el.innerText = "Playing..";
-        }
-        playing = !playing;
-      }
-
-      const el2 = document.getElementById("btn-play-wet");
-      const playing2 = false; // текущее состояние плеера
-
-      const player2 = new Audio("/audio/wet.mp3");
-      player2.preload = "auto";
-      player2.addEventListener("ended", function () {
-        // слушаем окончание трека
-        document.querySelector(".btn-play.wet").classList.remove("hidden");
-        document.querySelector(".btn-pause.wet").classList.add("hidden");
-        playing2 = false;
-      });
-
-      el2.addEventListener("click", playPause2); // слушаем нажатие на кнопку
-      function playPause2() {
-        if (playing2) {
-          player2.pause();
-          document.querySelector(".text-wet").innerText = "Paused";
-        } else {
-          player2.play();
-          document.querySelector(".btn-play.wet").classList.add("hidden");
-          document.querySelector(".btn-pause.wet").classList.remove("hidden");
-          // el.innerText = "Playing..";
-        }
-        playing2 = !playing2;
-      }
+    // if (document.querySelector(".index")) {
+    //   const el = document.getElementById("btn-play-dry");
+    //   const playing = false; // текущее состояние плеера
+    //   const player = new Audio("/audio/dry.mp3");
+    //   player.preload = "auto";
+    //   player.addEventListener("ended", function () {
+    //     // слушаем окончание трека
+    //     // document.querySelector(".text-dry").innerText =
+    //     //   "Прислушайтесь как звучит сухой кашель";
+    //     document.querySelector(".btn-play.dry").classList.remove("hidden");
+    //     document.querySelector(".btn-pause.dry").classList.add("hidden");
+    //     playing = false;
+    //   });
+    //   el.addEventListener("click", playPause); // слушаем нажатие на кнопку
+    //   function playPause() {
+    //     if (playing) {
+    //       player.pause();
+    //       document.querySelector(".text-dry").innerText = "Paused";
+    //     } else {
+    //       player.play();
+    //       document.querySelector(".btn-play.dry").classList.add("hidden");
+    //       document.querySelector(".btn-pause.dry").classList.remove("hidden");
+    //       // document.querySelector(".text-dry").innerText = "Playing..";
+    //       // el.innerText = "Playing..";
+    //     }
+    //     playing = !playing;
+    //   }
+    //   const el2 = document.getElementById("btn-play-wet");
+    //   const playing2 = false; // текущее состояние плеера
+    //   const player2 = new Audio("/audio/wet.mp3");
+    //   player2.preload = "auto";
+    //   player2.addEventListener("ended", function () {
+    //     // слушаем окончание трека
+    //     document.querySelector(".btn-play.wet").classList.remove("hidden");
+    //     document.querySelector(".btn-pause.wet").classList.add("hidden");
+    //     playing2 = false;
+    //   });
+    //   el2.addEventListener("click", playPause2); // слушаем нажатие на кнопку
+    //   function playPause2() {
+    //     if (playing2) {
+    //       player2.pause();
+    //       document.querySelector(".text-wet").innerText = "Paused";
+    //     } else {
+    //       player2.play();
+    //       document.querySelector(".btn-play.wet").classList.add("hidden");
+    //       document.querySelector(".btn-pause.wet").classList.remove("hidden");
+    //       // el.innerText = "Playing..";
+    //     }
+    //     playing2 = !playing2;
+    //   }
+    // }
+    const $audioOne = document.getElementById("audio-1");
+    const $btnOne = document.getElementById("btn-play-dry");
+    $btnOne.addEventListener("click", togglePlay);
+    function togglePlay() {
+      return $audioOne.paused ? $audioOne.play() : $audioOne.pause();
     }
+    $btnOne.addEventListener("click", () => {
+      document.querySelector(".btn-play.dry").classList.toggle("hidden");
+      document.querySelector(".btn-pause.dry").classList.toggle("hidden");
+    });
+    const $audioTwo = document.getElementById("audio-2");
+    const $btnTwo = document.getElementById("btn-play-wet");
+    $btnTwo.addEventListener("click", togglePlayTwo);
+    function togglePlayTwo() {
+      return $audioTwo.paused ? $audioTwo.play() : $audioTwo.pause();
+    }
+    $btnTwo.addEventListener("click", () => {
+      document.querySelector(".btn-play.wet").classList.toggle("hidden");
+      document.querySelector(".btn-pause.wet").classList.toggle("hidden");
+    });
+    // if ($audioOne.paused) {
+    //   console.log("pause");
+    // document.querySelector(".btn-play.dry").classList.remove("hidden");
+    // document.querySelector(".btn-pause.dry").classList.add("hidden");
+    // }
   },
 };
 document.addEventListener("DOMContentLoaded", () => {
