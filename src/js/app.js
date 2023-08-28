@@ -77,7 +77,34 @@ const APP = {
           if ($activeToggle) {
             $activeToggle.classList.remove("active");
           }
-          const $activeTab = document.querySelectorAll(".tabs__wrapper__item.active-tab");
+          const $activeTabHero = document.querySelectorAll(".tabs__wrapper__item.active-tab.hero-tab");
+          [...$activeTabHero].forEach((item) => {
+            if (item) {
+              item.classList.remove("active-tab");
+              item.classList.add("hidden-tab");
+            }
+          });
+
+          const currentTab = document.querySelector($toggle.getAttribute("href"));
+          currentTab.classList.add("active-tab");
+          currentTab.classList.remove("hidden-tab");
+          $toggle.classList.add("active");
+        });
+      });
+    });
+    const $tabsArticles = document.querySelectorAll(".tabs-articles");
+    [...$tabsArticles].forEach(($item) => {
+      [...$item.querySelectorAll(".toggle-article")].forEach(($toggle) => {
+        $toggle.addEventListener("click", (event) => {
+          event.preventDefault();
+          [...document.querySelectorAll(".toggle-article.active")].forEach(($toggleActive) => {
+            $toggleActive.classList.remove("active");
+          });
+          const $activeToggle = $item.querySelector(".toggle-article.active");
+          if ($activeToggle) {
+            $activeToggle.classList.remove("active");
+          }
+          const $activeTab = document.querySelectorAll(".tabs__wrapper__article.active-tab");
           [...$activeTab].forEach((item) => {
             if (item) {
               item.classList.remove("active-tab");

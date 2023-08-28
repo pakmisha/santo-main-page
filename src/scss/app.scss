@@ -145,20 +145,73 @@ body {
     }
   }
 }
-.tabs {
-  &.articles {
-    @apply flex flex-col items-center justify-center;
-    .tabs__nav {
-      @apply mb-7;
-      .toggle-article {
-        @apply mr-3 inline-block rounded border border-gray-300 bg-gray-100 px-6 py-3 text-lg text-gray-400;
-        &.active {
-          @apply border-brand-accent bg-brand-accent text-brand-dark text-white;
+.tabs-articles {
+  @apply flex flex-col items-center justify-center;
+  .tabs__nav {
+    @apply mb-7 flex flex-wrap gap-3 2xl:gap-5;
+    .toggle-article {
+      @apply inline-block rounded border border-gray-300 bg-gray-100 px-6 py-3 text-lg text-gray-400;
+      &.active {
+        @apply border-brand-accent bg-brand-accent text-brand-dark text-white;
+      }
+    }
+  }
+  .tabs__wrapper {
+    &__article {
+      &.hidden-tab {
+        @apply transition-all duration-300 ease-in-out lg:invisible lg:h-0 lg:scale-90 lg:overflow-hidden lg:opacity-0;
+      }
+      &.active-tab {
+        @apply visible h-auto scale-100 overflow-auto opacity-100 transition-all duration-300 ease-in-out;
+      }
+    }
+  }
+  .tab-toggle {
+    @apply flex items-center;
+
+    &.tab-nav-1 {
+      @media (min-width: 1300px) {
+        @apply absolute right-[16px] top-[20.5rem];
+      }
+      @media (min-width: 1400px) {
+        @apply absolute right-[30px] top-[21.5rem];
+      }
+      @media (min-width: 1600px) {
+        @apply absolute right-[80px] top-[25rem];
+      }
+      @media (min-width: 1900px) {
+        @apply absolute right-[136px] top-[28.6rem];
+      }
+    }
+    &.tab-nav-2 {
+      @media (min-width: 1300px) {
+        @apply absolute left-[33px] top-[25.7rem];
+      }
+      @media (min-width: 1400px) {
+        @apply absolute left-[42px] top-[27.5rem];
+      }
+      @media (min-width: 1600px) {
+        @apply absolute left-[95px] top-[32rem];
+      }
+      @media (min-width: 1900px) {
+        @apply absolute left-[146px] top-[37rem];
+      }
+    }
+    &.active {
+      svg {
+        path {
+          &.bg-path {
+            fill: #ffc700;
+          }
+          &.text-path {
+            fill: white;
+          }
         }
       }
     }
   }
-
+}
+.tabs {
   .tabs__wrapper {
     &__item {
       &.hidden-tab {
