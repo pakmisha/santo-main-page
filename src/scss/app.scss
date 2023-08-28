@@ -146,6 +146,19 @@ body {
   }
 }
 .tabs {
+  &.articles {
+    @apply flex flex-col items-center justify-center;
+    .tabs__nav {
+      @apply mb-7;
+      .toggle-article {
+        @apply mr-3 inline-block rounded border border-gray-300 bg-gray-100 px-6 py-3 text-lg text-gray-400;
+        &.active {
+          @apply border-brand-accent bg-brand-accent text-brand-dark text-white;
+        }
+      }
+    }
+  }
+
   .tabs__wrapper {
     &__item {
       &.hidden-tab {
@@ -158,6 +171,7 @@ body {
   }
   .tab-toggle {
     @apply flex items-center;
+
     &.tab-nav-1 {
       @media (min-width: 1300px) {
         @apply absolute right-[16px] top-[20.5rem];
@@ -257,7 +271,13 @@ body {
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   .article-page-content {
-    @apply max-w-5xl space-y-5 rounded-xl bg-white px-7 py-5 md:px-14 md:py-10 lg:space-y-7;
+    @apply max-w-5xl space-y-4 rounded-xl bg-white px-7 py-5 md:px-14 md:py-10 lg:space-y-6;
+    ul {
+      @apply my-2 pl-5;
+    }
+    p {
+      @apply mb-3;
+    }
   }
 }
 .cough {

@@ -1,7 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/article-five.html": "/article-five.html",
+    "/article-four.html": "/article-four.html",
     "/article-one.html": "/article-one.html",
+    "/article-three.html": "/article-three.html",
+    "/article-two.html": "/article-two.html",
     "/index.html": "/index.html",
     "/layouts/app.html": "/layouts/app.html",
     "/parts/mobile-nav.html": "/parts/mobile-nav.html",

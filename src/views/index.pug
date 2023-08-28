@@ -47,15 +47,53 @@ block content
             div(class="text-center mb-5 lg:mb-10")#articles
                 h2.heading Статьи
                 div(class="text-lg font-semibold") Как бороться с болью в горле и кашлем
-            div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 2xl:gap-10")
-                each item in seed.articles 
-                    .article(class=item.class)
-                        .article__image: img(src=item.image, alt="")
-                        .article__content 
-                            .article__content__subtitle=item.subtitle 
-                            .article__content__title=item.title
-                            .article__content__description=item.description
-                            .article__content__button: a(href=item.href).btn-primary Читать
+            .tabs.articles 
+                .tabs__nav
+                    a(href=".tab-3").tab-toggle.toggle-article.active Лоридамин
+                    a(href=".tab-4").tab-toggle.toggle-article Амбро
+                    a(href=".tab-5").tab-toggle.toggle-article Мукалтин
+                    a(href=".tab-6").tab-toggle.toggle-article Гелисал
+                .tabs__wrapper 
+                    .tabs__wrapper__item.tab-3.active-tab
+                        div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 2xl:gap-10")
+                            each item in seed.articles.loridamin 
+                                .article(class=item.class) 
+                                    .article__image: img(src=item.image, alt="")
+                                    .article__content 
+                                        .article__content__subtitle=item.subtitle 
+                                        .article__content__title=item.title
+                                        .article__content__description=item.description
+                                        .article__content__button: a(href=item.href).btn-primary Читать
+                    .tabs__wrapper__item.tab-4.hidden-tab
+                        div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 2xl:gap-10")
+                            each item in seed.articles.ambro 
+                                .article(class=item.class) 
+                                    .article__image: img(src=item.image, alt="")
+                                    .article__content 
+                                        .article__content__subtitle=item.subtitle 
+                                        .article__content__title=item.title
+                                        .article__content__description=item.description
+                                        .article__content__button: a(href=item.href).btn-primary Читать
+                    .tabs__wrapper__item.tab-5.hidden-tab
+                        div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 2xl:gap-10")
+                            each item in seed.articles.mucaltin 
+                                .article(class=item.class) 
+                                    .article__image: img(src=item.image, alt="")
+                                    .article__content 
+                                        .article__content__subtitle=item.subtitle 
+                                        .article__content__title=item.title
+                                        .article__content__description=item.description
+                                        .article__content__button: a(href=item.href).btn-primary Читать
+                    .tabs__wrapper__item.tab-6.hidden-tab
+                        div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 2xl:gap-10")
+                            each item in seed.articles.gelisal 
+                                .article(class=item.class) 
+                                    .article__image: img(src=item.image, alt="")
+                                    .article__content 
+                                        .article__content__subtitle=item.subtitle 
+                                        .article__content__title=item.title
+                                        .article__content__description=item.description
+                                        .article__content__button: a(href=item.href).btn-primary Читать
             //- div(class="flex justify-center mt-5 lg:mt-10"): button(class="btn-primary load-more") Показать еще
     section.external-distance
         .cough.content#cough 
